@@ -1,0 +1,67 @@
+---
+import '../styles/global.css';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "Arquitecto de Producto. Construyendo sistemas sólidos, en vivo y sin filtros." } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2280%22 fill=%22%238b5cf6%22 font-family=%22monospace%22 font-weight=%22bold%22>&gt;_</text></svg>" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <Nav />
+    <main class="flex-grow pt-24 pb-16">
+      <slot />
+    </main>
+    <Footer />
+    
+    <script>
+      // Scroll reveal logic
+      const initReveal = () => {
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('reveal--visible');
+            } else {
+              // Remove the class when it leaves the viewport so it can animate again when it returns
+              entry.target.classList.remove('reveal--visible');
+            }
+          });
+        }, { threshold: 0.15 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+      };
+
+      // Run on initial load
+      initReveal();
+      
+      // Support for ViewTransitions if added later
+      document.addEventListener('astro:page-load', initReveal);
+    </script>
+    <script>
+      import Lenis from 'lenis';
+
+      // Initialize Lenis for premium smooth scrolling
+      const lenis = new Lenis({
+        autoRaf: true,
+        duration: 1.2,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      });
+    </script>
+  </body>
+</html>

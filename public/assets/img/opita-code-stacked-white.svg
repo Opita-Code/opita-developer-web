@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 360" fill="none">
+  <title>Opita Code — Stacked Lockup (White)</title>
+  <desc>Concepto 01: symbol above wordmark. For dark backgrounds. Provisional — versión inicial.</desc>
+  <g transform="translate(22,14) scale(1.0)">
+    <g stroke="#FAF8F5" stroke-width="18" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M 190,180 C 190,236 66,236 66,180"/>
+      <path d="M 188,66 C 244,66 244,190 180,190"/>
+      <path d="M 60,80 C 60,18 196,18 196,78"/>
+      <path d="M 80,190 C 14,190 14,66 78,68"/>
+    </g>
+  </g>
+  <g fill="#FAF8F5" font-family="system-ui, -apple-system, sans-serif" text-anchor="middle">
+    <text x="150" y="292" font-weight="700" font-size="42" letter-spacing="-0.5">Opita</text>
+    <text x="150" y="332" font-weight="400" font-size="34" letter-spacing="1.5">Code</text>
+  </g>
+</svg>

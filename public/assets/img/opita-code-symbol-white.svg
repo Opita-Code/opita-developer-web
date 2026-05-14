@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="none">
+  <title>Opita Code — Symbol (White)</title>
+  <desc>Concepto 01: four interlaced ribbon forms around a central diamond negative space. For dark backgrounds. Provisional — versión inicial.</desc>
+  <g stroke="#FAF8F5" stroke-width="18" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M 190,180 C 190,236 66,236 66,180"/>
+    <path d="M 188,66 C 244,66 244,190 180,190"/>
+    <path d="M 60,80 C 60,18 196,18 196,78"/>
+    <path d="M 80,190 C 14,190 14,66 78,68"/>
+  </g>
+</svg>

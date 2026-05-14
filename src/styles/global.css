@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700;800;900&family=JetBrains+Mono:wght@400;700&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Inter', sans-serif;
+  --font-display: 'Outfit', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Gamer / Tech Dark Mode Base */
+  --color-bg-base: #09090b; /* Zinc 950 */
+  --color-bg-surface: #18181b; /* Zinc 900 */
+  --color-bg-glass: rgba(24, 24, 27, 0.7);
+  
+  /* Cyberpunk / Synthwave Accents */
+  --color-accent-primary: #8b5cf6; /* Violet 500 */
+  --color-accent-secondary: #06b6d4; /* Cyan 500 */
+  --color-accent-glow: rgba(139, 92, 246, 0.5);
+  
+  --color-text-primary: #fafafa; /* Zinc 50 */
+  --color-text-secondary: #a1a1aa; /* Zinc 400 */
+}
+
+@layer base {
+  html {
+    @apply bg-bg-base text-text-primary antialiased;
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply min-h-screen flex flex-col;
+    /* Subtle grid background for the "IDE" vibe */
+    background-image: 
+      linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  ::selection {
+    background-color: var(--color-accent-primary);
+    color: white;
+  }
+
+  /* Custom Scrollbar - Cyberpunk style */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-bg-base;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-zinc-800 rounded-full border border-bg-base;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-violet-500;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-bg-glass backdrop-blur-md border border-zinc-800/50 shadow-2xl;
+  }
+  
+  .glow-text {
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-cyan-400 drop-shadow-[0_0_15px_rgba(139,92,246,0.5)];
+  }
+  
+  .neon-border {
+    @apply border border-violet-500/30 shadow-[0_0_15px_rgba(139,92,246,0.15)] hover:border-cyan-400/50 hover:shadow-[0_0_20px_rgba(6,182,212,0.25)] transition-all duration-300;
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(40px) scale(0.96);
+    filter: blur(8px);
+    transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform, opacity, filter;
+  }
+  
+  .reveal--visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}

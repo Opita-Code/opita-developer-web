@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 200" fill="none">
+  <title>Opita Code — Horizontal Lockup (White)</title>
+  <desc>Concepto 01: symbol left, wordmark right. For dark backgrounds. Provisional — versión inicial.</desc>
+  <g transform="translate(16,28) scale(0.625)">
+    <g stroke="#FAF8F5" stroke-width="18" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M 190,180 C 190,236 66,236 66,180"/>
+      <path d="M 188,66 C 244,66 244,190 180,190"/>
+      <path d="M 60,80 C 60,18 196,18 196,78"/>
+      <path d="M 80,190 C 14,190 14,66 78,68"/>
+    </g>
+  </g>
+  <g fill="#FAF8F5" font-family="system-ui, -apple-system, sans-serif">
+    <text x="186" y="107" font-weight="700" font-size="44" letter-spacing="-0.5">Opita</text>
+    <text x="186" y="147" font-weight="400" font-size="38" letter-spacing="1.5">Code</text>
+  </g>
+</svg>
