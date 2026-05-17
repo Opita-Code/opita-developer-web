@@ -1,43 +1,48 @@
-# Astro Starter Kit: Minimal
+# Opita Developer Web
 
-```sh
-npm create astro@latest -- --template minimal
+> Portfolio y sitio de identidad de marca del **Opita Developer** — canal público de Opita Code.
+
+Sitio Astro con estética "Cyberpunk/Gamer" orientado a product architects y desarrolladores. Presenta el trabajo técnico de Opita Code con animaciones premium, terminal interactiva y diagramas de arquitectura en vivo.
+
+---
+
+## Stack
+
+| Capa | Tecnología |
+|------|-----------|
+| Framework | Astro |
+| Componentes interactivos | React + TypeScript |
+| Estilos | CSS vanilla + custom design tokens |
+| Animaciones | Framer Motion (en componentes React) |
+| Hosting | S3 + CloudFront (opitacode.com/developer o subdominio) |
+
+## Estructura
+
 ```
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
+opita-developer-web/
 ├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+│   ├── components/
+│   │   ├── ArchitectureDiagram.tsx  # Diagrama de arquitectura interactivo (React)
+│   │   └── InteractiveTerminal.tsx  # Terminal simulado (React)
+│   ├── layouts/
+│   │   └── Layout.astro             # Layout base con Nav y Footer
+│   ├── pages/
+│   │   └── index.astro              # Página principal del portfolio
+│   └── styles/
+│       └── global.css               # Estilos globales y tokens
+├── public/                          # Assets estáticos
+├── astro.config.mjs
+└── tsconfig.json
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Quick Start
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+```bash
+npm install
+npm run dev    # localhost:4321
+npm run build  # Genera dist/
+```
 
-Any static assets, like images, can be placed in the `public/` directory.
+---
 
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+> Canal público de Opita Code · Construido desde Colombia 🇨🇴
